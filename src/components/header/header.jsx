@@ -10,11 +10,11 @@ import {
     Divider,
     NavContainer,
     NavLinkItem,
-    NavLink
+    NavLink,
+    TabNavLink
 } from './header.styled'
 
 export const Header = ({ toggle }) => {
-    // const { open, close } = props;
     return (
         <>
             <HeaderContainer>
@@ -30,21 +30,33 @@ export const Header = ({ toggle }) => {
                     <Divider />
                     <NavContainer>
                         <NavLinkItem>
+                            <TabNavLink to="/">
+                                Home
+                            </TabNavLink>
                             <NavLink to="/">
                                 00 Home
                             </NavLink>
                         </NavLinkItem>
                         <NavLinkItem>
+                            <TabNavLink to="/destination">
+                                Destination
+                            </TabNavLink>
                             <NavLink to="/destination">
                                 01 Destination
                             </NavLink>
                         </NavLinkItem>
                         <NavLinkItem>
+                            <TabNavLink to="/crew">
+                                crew
+                            </TabNavLink>
                             <NavLink to="/crew">
                                 02 Crew
                             </NavLink>
                         </NavLinkItem>
                         <NavLinkItem>
+                            <TabNavLink to="/tecnology">
+                                technology
+                            </TabNavLink>
                             <NavLink to="/technology">
                                 03 technology
                             </NavLink>

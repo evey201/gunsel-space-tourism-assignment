@@ -1,16 +1,16 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom'
 
 export const SideBarContainer = styled.nav`
     display: none;
     @media(max-width: 400px) {
-        position: absolute;
+        position: fixed;
         display: flex;
         flex-direction: column;
         color: #FFFFFF;
         background: rgba(255, 255, 255, 0.04);
         height: 100%;
-        width: 65%;
+        width: 240px;
         transition: all 0.2s;
         transition-timing-function: cubic-bezier(0.1, 0.7, 1, 0.1);
         right: ${({ open }) => (open ? '0' : '-100vw')};
@@ -43,16 +43,16 @@ export const SideBarMenu = styled.ul`
 
 export const SidebarMenuItem = styled.li`
     display: flex;
-    height: 20px;
+    height: 30px;
     width: 100%;
     align-items: center;
-    padding: 10px;
-    ${'' /* padding-left: 30px; */}
+    ${'' /* padding: 10px; */}
+    padding: 24px;
     ${'' /* background: ${(props) => (props.active ? '#EDE1F6' : '')}; */}
     border-right-style: ${(props) => (props.active ? 'solid' : '')};
-    border-right-width: ${(props) => (props.active ? '4px' : '')};
-    border-right-color: ${(props) => (props.active ? '#FFFFF' : '')};
-    transition: all 0.1s;
+    border-right-width: ${(props) => (props.active ? '3px' : '0px')};
+    border-right-color: ${(props) => (props.active ? '#FFFFFF' : '')};
+    transition: all 0.2s;
     &:hover {
         cursor: pointer;
     }
@@ -68,4 +68,10 @@ export const ItemLabel = styled.p`
     line-height: 19px;
     letter-spacing: 2.7px;
     text-align: left;
+`
+
+export const LinkWrapper = styled(Link)`
+    border-right-style: ${(props) => (props.active ? 'solid' : '')};
+    border-right-width: ${(props) => (props.active ? '3px' : '0px')};
+    border-right-color: ${(props) => (props.active ? '#FFFFFF' : '')};
 `

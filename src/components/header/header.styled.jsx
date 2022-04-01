@@ -49,6 +49,7 @@ export const RightCorner = styled.div`
     display: flex;
     align-items: center;
     width: 100%;
+    z-index: auto;
     ${'' /* height: 40px */}
 
     @media (max-width: 380px) {
@@ -58,17 +59,17 @@ export const RightCorner = styled.div`
 `
 export const Divider = styled.div`
     height: 1px;
-    width: 700px;
+    width: 400px;
     background: #FFFFFF;
     mix-blend-mode: normal;
     opacity: 0.25;
-
+    z-index: 99;
     @media (max-width: 800px) {
         display: none;
     }
 `
 
-export const NavContainer = styled.ul`
+export const NavContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -76,7 +77,7 @@ export const NavContainer = styled.ul`
     color: #fff;
     width: 100%;
     height: 40px;
-    z-index:1;
+    z-index: 1;
     background: rgba(255, 255, 255, 0.04);
     backdrop-filter: blur(81.5485px);
 
@@ -104,22 +105,40 @@ export const NavLinkItem = styled.li`
     letter-spacing: 2.3625px;
 
     color: #FFFFFF;
+    
 
     &:active {
         border-bottom: 1px solid #FFFFFF;
     }
 
-    &: hover{
+    &:hover{
         cursor: pointer;
+        border-bottom: 1px solid #FFFFFF;
     }
 `
 
 export const NavLink = styled(Link)`
     color: #FFFFFF;
     text-decoration: none;
-    &:nth-child() {
+    &.active {
+        border-bottom: 1px solid #FFFFFF;
+    }
+    
         @media (min-width: 400px) and (max-width: 800px) {
             display:none;
         }
+`
+
+export const TabNavLink = styled(Link)`
+    ${'' /* display: none; */}
+    @media (min-width: 400px) and (max-width: 800px) {
+        color: #FFFFFF;
+        text-decoration: none;
+        &.active {
+            border-bottom: 1px solid #FFFFFF;
+        }
+    }
+    @media (min-width: 801px) {
+        display: none;
     }
 `

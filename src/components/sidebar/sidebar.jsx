@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, matchPath, useLocation } from 'react-router-dom'
+import { matchPath, useLocation } from 'react-router-dom'
 import { ReactComponent as Close } from '../../assets/icons/close.svg'
 import { Routes } from '../../constants/routes'
 import {
@@ -8,7 +8,8 @@ import {
     CloseWrapper,
     SideBarMenu,
     SidebarMenuItem,
-    ItemLabel
+    ItemLabel,
+    LinkWrapper
 } from './sidebar.styled'
 
 
@@ -27,14 +28,14 @@ export const SideBar = (props) => {
                     {
                         Routes?.map((route) => {
                             const active = matchPath(pathname, route?.path)?.isExact
-                            return <Link to={route?.path} key={route?.title}
+                            return <LinkWrapper to={route?.path} key={route?.title}
                                 onClick={close}>
                                 <SidebarMenuItem active={active}>
                                     <ItemLabel>
                                         {route?.title}
                                     </ItemLabel>
                                 </SidebarMenuItem>
-                            </Link>
+                            </LinkWrapper>
                         })
                     }
                 </SideBarMenu>
