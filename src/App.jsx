@@ -2,16 +2,18 @@ import React, { useState } from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { Header, SideBar } from './components'
 import { HomePage, Destination} from './pages'
+import './App.css'
 
 export const App = () => {
   const [isSideBarOpen, toggleSidebar] = useState(false)
   // console.log(isSideBarOpen)
   const currentLocation = useLocation()
   const locationPathname = currentLocation.pathname.replace('/', '')
+  // console.log(locationPathname)
 
   return (
     <div 
-          className={`${ locationPathname === '' ? 'home' : locationPathname }`}
+          className={`app ${ locationPathname === '' ? 'home' : locationPathname } -bc`}
         >
         <SideBar
             open={isSideBarOpen}
