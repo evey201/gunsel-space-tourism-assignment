@@ -7,8 +7,11 @@ export const Layout = ({ children, backgroundImage, mobileBgImage }) => {
 	console.log(isSideBarOpen);
 	return (
 		<Main backgroundImage={backgroundImage} mobileBgImage={mobileBgImage}>
-			{/* <SideBar open={isSideBarOpen} close={() => toggleSidebar(false)} /> */}
-			<Header toggle={() => toggleSidebar(!isSideBarOpen)} />
+			<SideBar open={isSideBarOpen} close={() => toggleSidebar(false)} />
+			<Header
+				toggle={() => toggleSidebar(!isSideBarOpen)}
+				isSideBarOpen={isSideBarOpen}
+			/>
 			{children}
 		</Main>
 	);

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { NavLink as RNavLink } from 'react-router-dom';
 
 export const HeaderContainer = styled.div`
 	width: 100%;
@@ -13,7 +13,7 @@ export const HeaderContainer = styled.div`
 
 export const IconContainer = styled.div`
 	${'' /* padding-top: 20px; */}
-	@media (max-width: 380px) {
+	@media (max-width: 768px) {
 		max-width: 100%;
 		width: 100%;
 		display: flex;
@@ -23,12 +23,12 @@ export const IconContainer = styled.div`
 		padding-left: 15px;
 	}
 
-	@media (min-width: 400px) and (max-width: 800px) {
+	/* @media (min-width: 400px) and (max-width: 800px) {
 		padding-right: 250px;
-	}
+	} */
 `;
 
-export const LogoContainer = styled(Link)``;
+export const LogoContainer = styled(RNavLink)``;
 export const MenuToggler = styled.button`
 	height: 30px;
 	width: 30px;
@@ -39,8 +39,8 @@ export const MenuToggler = styled.button`
 		outline: none;
 		cursor: pointer;
 	}
-
-	@media (min-width: 380px) {
+	/* @media (max-width: 768px) { */
+	@media (min-width: 768px) {
 		display: none;
 	}
 `;
@@ -51,7 +51,7 @@ export const RightCorner = styled.div`
 	width: 100%;
 	${'' /* height: 40px */}
 
-	@media (max-width: 380px) {
+	@media (max-width: 768px) {
 		display: none;
 	}
 `;
@@ -74,8 +74,8 @@ export const NavContainer = styled.ul`
 	text-transform: uppercase;
 	color: #fff;
 	width: 100%;
+	padding: 0px 24px;
 	z-index: 1;
-	padding: 24px;
 	background: rgba(255, 255, 255, 0.04);
 	backdrop-filter: blur(81.5485px);
 
@@ -103,18 +103,20 @@ export const NavLinkItem = styled.li`
 
 	color: #ffffff;
 
-	&:active {
-		border-bottom: 1px solid #ffffff;
-	}
-
 	&: hover {
 		cursor: pointer;
 	}
 `;
 
-export const NavLink = styled(Link)`
-	color: #ffffff;
-	text-decoration: none;
+export const NavLink = styled(RNavLink)`
+	padding: 18px 0px;
+	height: 100%;
+	span {
+		padding: 18px 0px;
+		color: #ffffff;
+		text-decoration: none;
+		/* border-bottom: 2px solid #fff; */
+	}
 	&:nth-child() {
 		@media (min-width: 400px) and (max-width: 800px) {
 			display: none;

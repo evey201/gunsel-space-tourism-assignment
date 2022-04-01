@@ -1,57 +1,77 @@
-import React from 'react'
-import { ReactComponent as MenuIcon } from '../../assets/icons/menu.svg'
-import { Logo } from '../Logo'
+import React from 'react';
+import { ReactComponent as MenuIcon } from '../../assets/icons/menu.svg';
+import { Logo } from '../Logo';
 import {
-    HeaderContainer,
-    IconContainer,
-    LogoContainer,
-    MenuToggler,
-    RightCorner,
-    Divider,
-    NavContainer,
-    NavLinkItem,
-    NavLink
-} from './header.styled'
+	HeaderContainer,
+	IconContainer,
+	LogoContainer,
+	MenuToggler,
+	RightCorner,
+	Divider,
+	NavContainer,
+	NavLinkItem,
+	NavLink,
+} from './header.styled';
+
+const navLinks = [
+	{
+		name: 'Home',
+		path: '/',
+	},
+	{
+		name: 'Destination',
+		path: '/destination',
+	},
+	{
+		name: 'Crew',
+		path: '/crew',
+	},
+	{
+		name: 'Technology',
+		path: '/technology',
+	},
+];
 
 export const Header = ({ toggle }) => {
-    // const { open, close } = props;
-    return (
-        <>
-            <HeaderContainer>
-                <IconContainer>
-                    <LogoContainer to='/'>
-                        <Logo />
-                    </LogoContainer>
-                    <MenuToggler onClick={toggle}>
-                        <MenuIcon />
-                    </MenuToggler>
-                </IconContainer>
-                <RightCorner>
-                    <Divider />
-                    <NavContainer>
-                        <NavLinkItem>
-                            <NavLink to="/">
-                                00 Home
-                            </NavLink>
-                        </NavLinkItem>
-                        <NavLinkItem>
-                            <NavLink to="/destination">
-                                01 Destination
-                            </NavLink>
-                        </NavLinkItem>
-                        <NavLinkItem>
-                            <NavLink to="/crew">
-                                02 Crew
-                            </NavLink>
-                        </NavLinkItem>
-                        <NavLinkItem>
-                            <NavLink to="/technology">
-                                03 technology
-                            </NavLink>
-                        </NavLinkItem>
-                    </NavContainer>
-                </RightCorner>
-            </HeaderContainer>
-        </>
-    )
-}
+	// const { open, close } = props;
+	return (
+		<>
+			<HeaderContainer>
+				<IconContainer>
+					<LogoContainer to='/'>
+						<Logo />
+					</LogoContainer>
+					<MenuToggler onClick={toggle}>
+						<MenuIcon />
+					</MenuToggler>
+				</IconContainer>
+				<RightCorner>
+					<Divider />
+					<NavContainer>
+						{navLinks.map((link, index) => (
+							<NavLinkItem key={index + link.path}>
+								<NavLink to={link.path}>
+									{({ isActive }) => (
+										<span
+											style={
+												isActive
+													? {
+															borderBottom:
+																'2px solid #fff',
+													  }
+													: undefined
+											}
+										>
+											{index.toString().padStart(2, 0)}{' '}
+											{link.name}
+										</span>
+									)}
+								</NavLink>
+							</NavLinkItem>
+						))}
+					</NavContainer>
+				</RightCorner>
+			</HeaderContainer>
+		</>
+	);
+};
