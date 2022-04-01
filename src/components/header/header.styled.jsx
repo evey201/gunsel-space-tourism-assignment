@@ -57,7 +57,7 @@ export const RightCorner = styled.div`
 `;
 export const Divider = styled.div`
 	height: 1px;
-	width: 700px;
+	width: 400px;
 	background: #ffffff;
 	mix-blend-mode: normal;
 	opacity: 0.25;
@@ -117,9 +117,5 @@ export const NavLink = styled(RNavLink)`
 		text-decoration: none;
 		/* border-bottom: 2px solid #fff; */
 	}
-	&:nth-child() {
-		@media (min-width: 400px) and (max-width: 800px) {
-			display: none;
-		}
-	}
+	
 `;

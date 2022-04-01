@@ -8,7 +8,7 @@ import {
 	Button,
 	Bold,
 } from './homepage.styled';
-import DesktopImage from '../../assets/images/desktop-home-bg.svg';
+import DesktopImage from '../../assets/home/background-home-desktop.jpg';
 import MobileImage from '../../assets/images/mobile-home-bg.png';
 
 export const HomePage = () => {
@@ -27,7 +27,7 @@ export const HomePage = () => {
 							experience!
 						</Text>
 					</Content>
-					<Button>explore</Button>
+					<Button to='/destination'>explore</Button>
 				</Flex>
 			</Container>
 		</Layout>

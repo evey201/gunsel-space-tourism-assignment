@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components/macro';
 
 export const Container = styled.div`
@@ -36,9 +37,9 @@ export const Content = styled.div`
 	}
 `;
 
-export const Button = styled.button`
+export const Button = styled(Link)`
 	/* flex: 1 1 0px; */
-	border-radius: 100%;
+	border-radius: 50%;
 	background-color: #fff;
 	padding: 10px;
 	height: 140px;
@@ -54,7 +55,7 @@ export const Button = styled.button`
 	transition: all 0.3s ease-in-out;
 	border: none;
 	&:hover {
-		transform: scale(1.01);
+		transform: scale(1.05);
 		outline: 38px solid #00000076;
 		outline-offset: 2px;
 	}
