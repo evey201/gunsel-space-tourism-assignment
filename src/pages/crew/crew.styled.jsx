@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 
 export const Container = styled.section`
-    height: 90vh;
-    display: grid;
-    grid-template-columns: 1fr 0.9fr;
+
+    display: flex;
+    justify-content: space-evenly;
     padding: 7.5rem 10rem 0 9.5rem;
     color: #ffffff;
 
@@ -82,7 +82,6 @@ export const Role = styled.h4`
     font-weight: 400;
     font-size: 32px;
     line-height: 37px;
-    /* identical to box height */
 
     text-transform: uppercase;
 
@@ -131,9 +130,8 @@ export const Name = styled.h2`
         line-height: 28px;
         text-transform: uppercase;
         text-align: center;
-        padding-left: 15px;
-        width: 380px;
-        ${'' /* align-self: center; */}
+        margin-bottom: 10px;
+        width: 300px;
     }
 
     @media (min-width: 400px) and (max-width: 800px) {
@@ -141,6 +139,7 @@ export const Name = styled.h2`
         line-height: 46px;
         text-align: center;
         padding-left: 90px;
+        margin-bottom: 20px;
     }
 `
 
@@ -155,6 +154,7 @@ export const Description = styled.p`
     @media (max-width: 380px) {
         font-size: 15px;
         line-height: 25px;
+        ${'' /* text-align: left; */}
         width:300px
 
     }
@@ -167,7 +167,14 @@ export const Description = styled.p`
 `
 
 export const BioData = styled.div`
-    margin-bottom: 30px
+    margin-bottom: 30px;
+    @media (max-width: 380px) {
+        display: flex;
+        flex-direction: column;
+        column-gap: 4px;
+        align-items: center;
+        text-align: center;
+	}
 `
 
 export const Images = styled.img`
