@@ -70,7 +70,7 @@ export const Num = styled.span`
    color: #ffffff;
    opacity: 0.25;
    @media (max-width: 380px) {
-       font-size: 16px
+       font-size: 16px;
        width: max-content;
    }
 `

@@ -23,7 +23,7 @@ import MobileImage from '../../assets/destination/background-destination-tablet.
 
 export const Destination = () => {
     const { destinations } = Data;
-    console.log(destinations);
+    // console.log(destinations);
     const { activeTab, onTabChangeHandler } = useTabs(0);
     return (
         <>

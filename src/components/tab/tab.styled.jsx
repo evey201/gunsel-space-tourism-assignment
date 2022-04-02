@@ -30,6 +30,49 @@ export const OrderedList = styled.li`
     }
     
 `
+export const Dots = styled.li`
+
+    width: 2rem;
+    height: 2rem;
+    background-color: rgba(#FFFFFF, 0.17);
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    @media only screen and (max-width: 380px) {
+      width: 1rem;
+      height: 1rem;
+    }
+
+  &:hover {
+    background-color: rgba(#FFFFFF, 0.6);
+  }
+
+  &:active {
+    background-color: rgba(#FFFFFF, 1);
+  }
+`
+
+export const SmallDots = styled.ul`
+    display: flex;
+    background-color: rgba(#FFFFFF, 0.17);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    @media only screen and (max-width: 380px) {
+      width: 1rem;
+      height: 1rem;
+    }
+
+  &:hover {
+    background-color: rgba(#FFFFFF, 0.6);
+  }
+
+  &:active {
+    background-color: rgba(#FFFFFF, 1);
+  }
+`
 
 export const UnOrderedList = styled.ul`
     list-style: none;
