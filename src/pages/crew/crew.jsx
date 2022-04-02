@@ -14,27 +14,29 @@ export const Crew = () => {
   return (
     <Layout backgroundImage={DestopImage} mobileBgImage={MobileImage}>
       <Container>
-          <Header>
-            <Num>02</Num> Meet your crew
-          </Header>
-          <Content>
-            <BioData>
-                <Role>{crew[activeTab].role}</Role>
-                <Name>{crew[activeTab].name}</Name>
-                <Description>{crew[activeTab].bio}</Description>
-            </BioData>
-            <Gallery
-                // className="Crew__dots-component"
-                value={activeTab}
-                data={new Array(crew.length).fill(' ')}
-                onChange={onTabChangeHandler}
-                // tabClassName="crew__dot"
-            />
-          </Content>
-        <Images 
-            src={crew[activeTab].images.png}
-            alt="crewMember"
-        />
+          <div>
+            <Header>
+              <Num>02</Num> Meet your crew
+            </Header>
+            <Content>
+              <BioData>
+                  <Role>{crew[activeTab].role}</Role>
+                  <Name>{crew[activeTab].name}</Name>
+                  <Description>{crew[activeTab].bio}</Description>
+              </BioData>
+              <Gallery
+                  value={activeTab}
+                  data={new Array(crew.length).fill(' ')}
+                  onChange={onTabChangeHandler}
+              />
+            </Content>
+          </div>
+          <div>
+          <Images 
+              src={crew[activeTab].images.png}
+              alt="crewMember"
+          />
+          </div>
       </Container>
     </Layout>
   );

@@ -17,7 +17,7 @@ export const Routes = [
     },
     {
         match: '/technology',
-        path: '/03 technology',
+        path: '/technology',
         title: '03 technology'
     },
 ]
