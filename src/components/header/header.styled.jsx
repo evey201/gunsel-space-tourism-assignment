@@ -7,7 +7,6 @@ export const HeaderContainer = styled.div`
 	display: flex;
 	color: #fff;
 	align-items: center;
-	position: fixed;
 	z-index: 1;
 `;
 
@@ -51,7 +50,7 @@ export const RightCorner = styled.div`
 	width: 100%;
 	${'' /* height: 40px */}
 
-	@media (max-width: 768px) {
+	@media (max-width: 380px) {
 		display: none;
 	}
 `;
@@ -116,6 +115,11 @@ export const NavLink = styled(RNavLink)`
 		color: #ffffff;
 		text-decoration: none;
 		/* border-bottom: 2px solid #fff; */
-	}
-	
+	}	
 `;
+
+export const NavNum = styled.span`
+	@media (min-width: 400px) and (max-width: 800px) {
+			display: none;
+	}
+`

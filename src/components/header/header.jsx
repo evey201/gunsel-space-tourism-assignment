@@ -11,6 +11,7 @@ import {
 	NavContainer,
 	NavLinkItem,
 	NavLink,
+	NavNum
 } from './header.styled';
 
 const navLinks = [
@@ -62,7 +63,7 @@ export const Header = ({ toggle }) => {
 													: undefined
 											}
 										>
-											{index.toString().padStart(2, 0)}{' '}
+											<NavNum>{index.toString().padStart(2, 0)}{' '}</NavNum>
 											{link.name}
 										</span>
 									)}
