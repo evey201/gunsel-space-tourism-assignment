@@ -11,14 +11,15 @@ import {
   BigDots
 } from './tab.styled'
 
+// FOr Destination page
 const Tab = ({ onSelect, content }) => {
   return (
-    <OrderedList onClick={onSelect}>
+    <OrderedList onClick={onSelect} >
       {content}
     </OrderedList>
   );
 };
-
+// For crew page
 const DotTab = ({ onSelect, content }) => {
   return (
     <Dots onClick={onSelect}>
@@ -26,16 +27,16 @@ const DotTab = ({ onSelect, content }) => {
     </Dots>
   )
 }
-
+// For technology page
 const CircleDot = ({ onSelect, content }) => {
   return (
-    <Circles onClick={onSelect}>
+    <Circles onClick={onSelect} active>
       {content}
     </Circles>
   )
 }
 
-export const Tabs = ({ data, onChange, tabClassName, className, value }) => {
+export const Tabs = ({ data, onChange, value }) => {
   const initialTabsState = {
     activeTabIndex: value,
     maxTabIndex: data.length - 1,
@@ -76,9 +77,6 @@ export const Tabs = ({ data, onChange, tabClassName, className, value }) => {
         <Tab
           key={i}
           index={i}
-          className={`${tabClassName} ${
-            state.activeTabIndex === i ? tabClassName + '--active' : ''
-          }`}
           onSelect={onTabSelectedHandler.bind(null, i)}
           content={el}
           
@@ -89,7 +87,7 @@ export const Tabs = ({ data, onChange, tabClassName, className, value }) => {
 };
 
 
-export const Gallery = ({ data, onChange, tabClassName, className, value }) => {
+export const Gallery = ({ data, onChange, value }) => {
   const initialTabsState = {
     activeTabIndex: value,
     maxTabIndex: data.length - 1,
@@ -130,9 +128,6 @@ export const Gallery = ({ data, onChange, tabClassName, className, value }) => {
         <DotTab
           key={i}
           index={i}
-          className={`${tabClassName} ${
-            state.activeTabIndex === i ? tabClassName + '--active' : ''
-          }`}
           onSelect={onTabSelectedHandler.bind(null, i)}
           content={el}
           
@@ -143,7 +138,7 @@ export const Gallery = ({ data, onChange, tabClassName, className, value }) => {
 };
 
 
-export const Circle = ({ data, onChange, tabClassName, value }) => {
+export const Circle = ({ data, onChange, value }) => {
   const initialTabsState = {
     activeTabIndex: value,
     maxTabIndex: data.length - 1,
@@ -184,9 +179,6 @@ export const Circle = ({ data, onChange, tabClassName, value }) => {
         <CircleDot
           key={i}
           index={i}
-          className={`${tabClassName} ${
-            state.activeTabIndex === i ? tabClassName + '--active' : ''
-          }`}
           onSelect={onTabSelectedHandler.bind(null, i)}
           content={el}
           

@@ -4,7 +4,7 @@ import { Main } from './Layout.styled';
 
 export const Layout = ({ children, backgroundImage, mobileBgImage }) => {
 	const [isSideBarOpen, toggleSidebar] = useState(false);
-	console.log(isSideBarOpen);
+	// console.log(isSideBarOpen);
 	return (
 		<Main backgroundImage={backgroundImage} mobileBgImage={mobileBgImage}>
 			<SideBar open={isSideBarOpen} close={() => toggleSidebar(false)} />

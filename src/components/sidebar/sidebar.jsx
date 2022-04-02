@@ -1,10 +1,9 @@
 import React from 'react';
-import { Link, matchPath, useLocation } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { ReactComponent as Close } from '../../assets/icons/close.svg';
 import { Routes } from '../../constants/routes';
 import {
 	SideBarContainer,
-	CloseWrapperContainer,
 	CloseWrapper,
 	SideBarMenu,
 	SidebarMenuItem,
@@ -13,7 +12,6 @@ import {
 
 export const SideBar = (props) => {
 	const { open, close } = props;
-	const { pathname } = useLocation();
 	return (
 		<>
 			<SideBarContainer open={open}>
@@ -23,20 +21,22 @@ export const SideBar = (props) => {
 
 				<SideBarMenu>
 					{Routes?.map((route) => {
-						const active = matchPath(
-							pathname,
-							route?.path
-						)?.isExact;
+						
 						return (
-							<Link
+							<NavLink
 								to={route?.path}
 								key={route?.title}
 								onClick={close}
 							>
-								<SidebarMenuItem active={active}>
-									<ItemLabel>{route?.title}</ItemLabel>
-								</SidebarMenuItem>
-							</Link>
+								{({ isActive }) => (
+									<SidebarMenuItem style={isActive ? {
+										borderRight: '4px solid #fff'
+									} : undefined}>
+										<ItemLabel>{route?.title}</ItemLabel>
+									</SidebarMenuItem>
+
+								)}
+							</NavLink>
 						);
 					})}
 				</SideBarMenu>

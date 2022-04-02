@@ -20,7 +20,7 @@ import {
 import DestopImage from "../../assets/technology/background-technology-desktop.jpg";
 import MobileImage from "../../assets/technology/background-technology-tablet.jpg";
 
-export const Technology = () => {
+export const Technology = ({ isActive }) => {
     const { technology } = Data;
     // console.log(crew.length)
     const { activeTab, onTabChangeHandler } = useTabs(0);

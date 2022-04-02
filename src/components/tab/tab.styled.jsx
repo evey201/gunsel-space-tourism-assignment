@@ -111,10 +111,12 @@ export const Circles = styled.li`
     &:active {
       background-color: #FFFFFF;
       opacity: 1;
+      color: #333
     }
     &:hover {
       background-color: #FFFFFF;
       opacity: 0.1;
+      color: #333
     }
 
     @media only screen and (max-width: 380px) {
