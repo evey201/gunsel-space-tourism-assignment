@@ -91,3 +91,57 @@ export const UnOrderedList = styled.ul`
 	}
     ${'' /* margin-bottom: 3rem; */}
 `
+
+export const Circles = styled.li`
+
+    width: 4rem;
+    height: 4rem;
+    background-color: transparent;
+    border: 1px solid #FFFFFF;
+    opacity:0.5;
+    font-size: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4rem;
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    
+    &:active {
+      background-color: #FFFFFF;
+      opacity: 1;
+    }
+    &:hover {
+      background-color: #FFFFFF;
+      opacity: 0.1;
+    }
+
+    @media only screen and (max-width: 380px) {
+      width: 3rem;
+      height: 3rem;
+      border-radius: 1.5rem;
+      font-size: 16px;
+    }
+    
+`
+
+export const BigDots = styled.ul`
+    column-gap: 3.5rem;
+    ${'' /* align-self: flex-start; */}
+    @media only screen and (min-width: 400px) and (max-width: 800px) {
+      display: flex;
+      grid-column-gap: 1.6rem;
+      column-gap: 1.6rem;
+      justify-content: center;
+    }
+
+    @media only screen and (max-width: 380px) {
+      display: flex;
+      grid-column-gap: 1.6rem;
+      column-gap: 1.6rem;
+      justify-content: center;
+    }
+    align-self: auto;
+`
+
