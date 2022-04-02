@@ -14,7 +14,6 @@ export const Crew = () => {
   return (
     <Layout backgroundImage={DestopImage} mobileBgImage={MobileImage}>
       <Container>
-        <div>
           <Header>
             <Num>02</Num> Meet your crew
           </Header>
@@ -32,7 +31,6 @@ export const Crew = () => {
                 // tabClassName="crew__dot"
             />
           </Content>
-        </div>
         <Images 
             src={crew[activeTab].images.png}
             alt="crewMember"

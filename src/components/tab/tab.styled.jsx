@@ -32,9 +32,10 @@ export const OrderedList = styled.li`
 `
 export const Dots = styled.li`
 
-    width: 2rem;
-    height: 2rem;
-    background-color: rgba(#FFFFFF, 0.17);
+    width: 3rem;
+    height: 3rem;
+    background-color: transparent;
+    opacity:0.5;
     border-radius: 2rem;
     cursor: pointer;
     transition: all 0.2s ease;
@@ -45,7 +46,8 @@ export const Dots = styled.li`
     }
 
   &:hover {
-    background-color: rgba(#FFFFFF, 0.6);
+    background-color: rgba(#FFFFFF);
+    opacity: 1;
   }
 
   &:active {
@@ -55,23 +57,19 @@ export const Dots = styled.li`
 
 export const SmallDots = styled.ul`
     display: flex;
-    background-color: rgba(#FFFFFF, 0.17);
-    border-radius: 50%;
     cursor: pointer;
     transition: all 0.2s ease;
+    padding-left: 40px;
 
-    @media only screen and (max-width: 380px) {
-      width: 1rem;
-      height: 1rem;
+    @media (max-width: 380px) {
+      column-gap: 2rem;
+      align-self:center;
     }
 
-  &:hover {
-    background-color: rgba(#FFFFFF, 0.6);
-  }
-
-  &:active {
-    background-color: rgba(#FFFFFF, 1);
-  }
+    @media (min-width: 400px) and (max-width: 800px) {
+      column-gap: 2rem;
+      align-self: center;
+    }
 `
 
 export const UnOrderedList = styled.ul`

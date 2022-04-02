@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const Container = styled.section`
     color: #ffffff;
-    padding: 112px;
+    padding: 50px;
     display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -28,7 +28,7 @@ export const LeftSide = styled.div`
     ${'' /* flex-wrap: wrap; */}
     flex-direction: row;
     justify-content: space-evenly;
-    padding-top: 40px;
+    ${'' /* padding-top: 40px; */}
 
     @media (max-width: 380px) {
         display: flex;

@@ -8,15 +8,16 @@ export const Container = styled.section`
     color: #ffffff;
 
     @media (min-width: 400px) and (max-width: 800px) {
+    display: grid;
     grid-template-columns: 1fr;
-    justify-items: center;
+    grid-row-gap: 4rem;
     row-gap: 4rem;
     height: 100vh;
-    padding: 7.5rem 4rem 0 4rem;
+    padding: 7.5rem 4rem 0;
   }
 
     @media (max-width: 380px) {
-        padding: 5.5rem 4rem 0 3rem;
+        padding: 5.5rem 2rem 0 3rem;
         display: flex;
         flex-direction: column;
         align-self: center;
@@ -38,7 +39,12 @@ export const Header = styled.h1`
         line-height: 19px;
         letter-spacing: 2.7px;
         text-transform: uppercase;
-        width: max-content;
+        width: 300px;
+        text-align: center;
+    }
+
+    @media (min-width: 400px) and (max-width: 800px) {
+        text-align: start;
     }
 `
 
@@ -52,13 +58,19 @@ export const Num = styled.span`
 `
 export const Content = styled.div`
     max-width: 80%;
+    
     @media (max-width: 380px) {
         display: flex;
+        flex-direction: column;
         align-self: center;
         max-width: 80%;
+        text-align: center;
     }
 
     @media (min-width: 400px) and (max-width: 800px) {
+        display: flex;
+        flex-direction: column;
+        align-self: center;
         text-align: center;
         margin: 0 auto;
 	}
@@ -100,6 +112,7 @@ export const Role = styled.h4`
         line-height: 18px;
         text-align: center;
         text-transform: uppercase;
+        width: 300px;
     }
 `
 
@@ -119,6 +132,7 @@ export const Name = styled.h2`
         text-transform: uppercase;
         text-align: center;
         padding-left: 15px;
+        width: 380px;
         ${'' /* align-self: center; */}
     }
 
@@ -136,12 +150,12 @@ export const Description = styled.p`
     font-weight: 400;
     font-size: 18px;
     line-height: 32px;
-    margin-bottom: 30px;
     
 
     @media (max-width: 380px) {
         font-size: 15px;
         line-height: 25px;
+        width:300px
 
     }
 
@@ -182,5 +196,6 @@ export const ImageWrapper = styled.div`
     @media (min-width: 400px) and (max-width: 800px) {
         margin: 5rem 0px 4rem;
         padding-right: 0px;
+        justify-self: end;
     }
 `
